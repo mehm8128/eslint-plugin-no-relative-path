@@ -16,7 +16,7 @@ const invalid = [
 		errors: [
 			{
 				message: "Relative paths are not allowed.",
-				type: "VariableDeclarator",
+				type: "CallExpression",
 			},
 		],
 		output: "var a = require('/@/aaa')",
@@ -26,7 +26,7 @@ const invalid = [
 		errors: [
 			{
 				message: "Relative paths are not allowed.",
-				type: "VariableDeclarator",
+				type: "CallExpression",
 			},
 		],
 		output: "var a = require('/@/aaa')",
