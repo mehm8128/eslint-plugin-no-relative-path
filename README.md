@@ -22,27 +22,16 @@ Add `no-relative-path` to the plugins section of your `.eslintrc` configuration 
 
 ```json
 {
-    "plugins": [
-        "no-relative-path"
-    ]
+	"plugins": ["no-relative-path"]
 }
 ```
 
-
-Then configure the rules you want to use under the rules section.
+And add `no-relative-path/no-relative-path` to the rules section of your `.eslintrc` configuration file:
 
 ```json
 {
-    "rules": {
-        "no-relative-path/rule-name": 2
-    }
+	"rules": {
+		"no-relative-path/no-relative-path": 2
+	}
 }
 ```
-
-## Rules
-
-<!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
-<!-- end auto-generated rules list -->
-
-
