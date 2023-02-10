@@ -3,23 +3,23 @@
 const rule = require("../../../lib/rules/no-relative-path.js")
 
 const RuleTester = require("eslint").RuleTester
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 6 } })
 
 const valid = [
-	{ code: "var a = require('/@/aaa')", options: [{ pathPrefix: "@" }] },
+	{ code: "const a = require('/@/aaa')", options: [{ pathPrefix: "@" }] },
 	{ code: "var a = require('./aaa')", options: [{ pathPrefix: "@" }] },
 ]
 
 const invalid = [
 	{
-		code: "var a = require('../aaa')",
+		code: "const a = require('../aaa')",
 		errors: [
 			{
 				message: "Relative paths are not allowed.",
 				type: "CallExpression",
 			},
 		],
-		output: "var a = require('/@/aaa')",
+		output: "const a = require('/@/aaa')",
 	},
 	{
 		code: "var a = require('../../aaa')",
