@@ -35,3 +35,27 @@ And add `no-relative-path/no-relative-path` to the rules section of your `.eslin
 	}
 }
 ```
+
+And also, you can designate absolute path prefix such as "/@":
+
+```json
+{
+	"rules": {
+		"no-relative-path/no-relative-path": [2, { "pathPrefix": "/@" }]
+	}
+}
+```
+
+This prefix is default to "/@".
+
+## Extra feature
+
+I belong to traP, which is a programming club in Tokyo Institute of Technology, and this club name is sometimes mistakenly written as "trap", "Trap", "TraP", and so on... So I added a feature to detect this mistake.
+
+```json
+{
+	"rules": {
+		"no-relative-path/no-trap-with-invalid-casing": 2
+	}
+}
+```
