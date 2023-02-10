@@ -6,7 +6,7 @@ const RuleTester = require("eslint").RuleTester
 const ruleTester = new RuleTester()
 
 const valid = [
-	{ code: "var a = requier('/@/aaa')", options: [{ pathPrefix: "@" }] },
+	{ code: "var a = require('/@/aaa')", options: [{ pathPrefix: "@" }] },
 	{ code: "var a = require('./aaa')", options: [{ pathPrefix: "@" }] },
 ]
 
