@@ -75,6 +75,17 @@ const invalid = [
 		options: [{ strict: true }],
 		output: "const traP = {\n  traP: 'traP'\n}",
 	},
+	{
+		code: "console.log(trap)",
+		errors: [
+			{
+				message: "'trap' is invalid casing.",
+				type: "CallExpression",
+			},
+		],
+		options: [{ strict: true }],
+		output: "console.log(traP)",
+	},
 ]
 
 ruleTester.run("no-relative-path", rule, { valid, invalid })
