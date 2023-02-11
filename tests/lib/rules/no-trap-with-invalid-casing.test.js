@@ -3,50 +3,77 @@
 const rule = require("../../../lib/rules/no-trap-with-invalid-casing.js")
 
 const RuleTester = require("eslint").RuleTester
-const ruleTester = new RuleTester()
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 6 } })
 
-const valid = [{ code: "var traP = 'traP'" }]
+const valid = [
+	{ code: "const traP = 'traP'" },
+	{ code: "function traP() {}", options: [{ strict: true }] },
+	{ code: "const traP = {\n  traP: 'traP'\n}", options: [{ strict: true }] },
+]
 
 const invalid = [
 	{
-		code: "var traP = 'trap'",
+		code: "const traP = 'trap'",
 		errors: [
 			{
 				message: "'trap' is invalid casing.",
 				type: "Literal",
 			},
 		],
-		output: "var traP = 'traP'",
+		options: [{ strict: true }],
+		output: "const traP = 'traP'",
 	},
 	{
-		code: "trap('Trap')",
+		code: "let trAP",
+		errors: [
+			{
+				message: "'trAP' is invalid casing.",
+				type: "VariableDeclarator",
+			},
+		],
+		options: [{ strict: true }],
+		output: "let traP",
+	},
+	{
+		code: "function Trap() {}",
 		errors: [
 			{
 				message: "'Trap' is invalid casing.",
-				type: "Literal",
+				type: "FunctionDeclaration",
 			},
 		],
-		output: "trap('traP')",
+		options: [{ strict: true }],
+		output: "function traP() {}",
 	},
 	{
-		code: "['TRAP']",
+		code: "const aaa = {\n  TRAP : 'traP'\n}",
 		errors: [
 			{
 				message: "'TRAP' is invalid casing.",
-				type: "Literal",
+				type: "Property",
 			},
 		],
-		output: "['traP']",
+		options: [{ strict: true }],
+		output: "const aaa = {\n  traP : 'traP'\n}",
 	},
 	{
-		code: "'TraP'",
+		code: "const Trap = {\n  TrAp: 'tRaP'\n}",
 		errors: [
 			{
-				message: "'TraP' is invalid casing.",
+				message: "'Trap' is invalid casing.",
+				type: "VariableDeclarator",
+			},
+			{
+				message: "'TrAp' is invalid casing.",
+				type: "Property",
+			},
+			{
+				message: "'tRaP' is invalid casing.",
 				type: "Literal",
 			},
 		],
-		output: "'traP'",
+		options: [{ strict: true }],
+		output: "const traP = {\n  traP: 'traP'\n}",
 	},
 ]
 
