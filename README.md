@@ -1,5 +1,7 @@
 # eslint-plugin-no-relative-path
 
+[![npm version](https://badge.fury.io/js/eslint-plugin-no-relative-path.svg)](https://badge.fury.io/js/eslint-plugin-no-relative-path)
+
 Disallow relative path import.
 
 ## Installation
