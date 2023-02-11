@@ -28,7 +28,7 @@ const invalid = [
 		errors: [
 			{
 				message: "'trAP' is invalid casing.",
-				type: "VariableDeclarator",
+				type: "Identifier",
 			},
 		],
 		options: [{ strict: true }],
@@ -39,7 +39,7 @@ const invalid = [
 		errors: [
 			{
 				message: "'Trap' is invalid casing.",
-				type: "FunctionDeclaration",
+				type: "Identifier",
 			},
 		],
 		options: [{ strict: true }],
@@ -50,7 +50,7 @@ const invalid = [
 		errors: [
 			{
 				message: "'TRAP' is invalid casing.",
-				type: "Property",
+				type: "Identifier",
 			},
 		],
 		options: [{ strict: true }],
@@ -61,11 +61,11 @@ const invalid = [
 		errors: [
 			{
 				message: "'Trap' is invalid casing.",
-				type: "VariableDeclarator",
+				type: "Identifier",
 			},
 			{
 				message: "'TrAp' is invalid casing.",
-				type: "Property",
+				type: "Identifier",
 			},
 			{
 				message: "'tRaP' is invalid casing.",
@@ -80,7 +80,7 @@ const invalid = [
 		errors: [
 			{
 				message: "'trap' is invalid casing.",
-				type: "CallExpression",
+				type: "Identifier",
 			},
 		],
 		options: [{ strict: true }],

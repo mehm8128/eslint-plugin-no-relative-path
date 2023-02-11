@@ -61,3 +61,13 @@ I belong to traP, which is a programming club in Tokyo Institute of Technology, 
 	}
 }
 ```
+
+And if you set strict mode `true`, eslint check not only literals but also identifiers.
+
+```json
+{
+	"rules": {
+		"no-relative-path/no-trap-with-invalid-casing": [2, { "strict": true }]
+	}
+}
+```
