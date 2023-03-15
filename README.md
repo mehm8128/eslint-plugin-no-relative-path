@@ -4,6 +4,8 @@
 
 Disallow relative path import.
 
+![eslint](assets/eslint.gif)
+
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
