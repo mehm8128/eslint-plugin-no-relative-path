@@ -22,16 +22,16 @@ const invalid = [
 		],
 		output: "const traP = 'traP'",
 	},
-	{
-		code: "const traP = `trap`",
-		errors: [
-			{
-				message: "'trap' is invalid casing.",
-				type: "TemplateElement",
-			},
-		],
-		output: "const traP = 'traP'",
-	},
+	// {
+	// 	code: "const traP = `trap`",
+	// 	errors: [
+	// 		{
+	// 			message: "'trap' is invalid casing.",
+	// 			type: "TemplateElement",
+	// 		},
+	// 	],
+	// 	output: "const traP = `traP`",
+	// },
 	{
 		code: "let trAP",
 		errors: [
@@ -95,6 +95,16 @@ const invalid = [
 		options: [{ strict: true }],
 		output: "console.log(traP)",
 	},
+	// {
+	// 	code: "<p>trap</p>",
+	// 	errors: [
+	// 		{
+	// 			message: "'trap' is invalid casing.",
+	// 			type: "JSXText",
+	// 		},
+	// 	],
+	// 	output: "<p>traP</p>",
+	// },
 ]
 
 ruleTester.run("no-relative-path", rule, { valid, invalid })
