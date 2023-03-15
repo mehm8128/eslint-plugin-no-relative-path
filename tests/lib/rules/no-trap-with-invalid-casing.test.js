@@ -20,7 +20,16 @@ const invalid = [
 				type: "Literal",
 			},
 		],
-		options: [{ strict: true }],
+		output: "const traP = 'traP'",
+	},
+	{
+		code: "const traP = `trap`",
+		errors: [
+			{
+				message: "'trap' is invalid casing.",
+				type: "TemplateElement",
+			},
+		],
 		output: "const traP = 'traP'",
 	},
 	{
