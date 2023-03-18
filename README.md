@@ -4,7 +4,7 @@
 
 Disallow relative path import.
 
-![eslint](assets/eslint.gif)
+![eslint](https://raw.githubusercontent.com/mehm8128/eslint-plugin-no-relative-path/master/assets/eslint.gif)
 
 ## Installation
 
