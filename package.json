@@ -1,6 +1,6 @@
 {
 	"name": "eslint-plugin-no-relative-path",
-	"version": "1.3.2",
+	"version": "1.3.3",
 	"description": "Disallow relative path import.",
 	"keywords": [
 		"eslint",
